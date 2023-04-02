@@ -15,12 +15,12 @@ def get_source(url: str) -> (int, str):
 
 
 def tag_extractor(url: str, tag_name: Optional[str] = "a") -> ResultSet:
-    """For starters, it will extract only the 'a' tag, but in the future, it 
-    could extract any HTML tag"""
+    """The standard behaviour is to return a list of "a" elements. But it should
+    work with any HTML tag. (Not tested with any tag other than "a", though)."""
     _, source = get_source(url)  # Ignoring status_code for now
     soup = BeautifulSoup(source, "html.parser")
 
-    return soup.find_all('a')
+    return soup.find_all(tag_name)
 
 
     
