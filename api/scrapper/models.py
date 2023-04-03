@@ -26,22 +26,9 @@ class Page(models.Model):
 
     @property
     def total_links(self):
-        return self.links.get_queryset().count() or "in progress"
+        return 0
 
     def __str__(self):
         return self.title or self.url
 
-
-class PageLink(models.Model):
-    uuid = models.UUIDField(
-        primary_key=True, default=uuid.uuid4, editable=False
-    )
-    href_attr = models.URLField(max_length=200)
-    name = models.CharField(max_length=50)
-    page = models.ForeignKey(
-        "scrapper.Page", on_delete=models.CASCADE, related_name="links"
-    )
-
-    def __str__(self):
-        return self.name
 
