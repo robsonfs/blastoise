@@ -6,7 +6,27 @@ This project is made up of three parts
 - **A Background Job:** Responsible for,  well, running the scrape requests in background. It uses a [python library](https://pypi.org/project/links-fetcher-robsonfs/) developed specifically for this project.
 
 
-# Components
-- [x] Backend Side
-- [ ] Frontend Side
-- [ ] Background Job
+# Checklist
+## Backend
+- [x] Route for pages retrieve
+- [x] Route for page update
+- [x] Route for page detail
+- [ ] Enqueue scrape tasks
+
+## Frontend
+- [x] Bootstrap Vue App
+- [x] Connect to the frontend
+- [ ] List Pages View
+- [ ] Scrape form
+- [ ] Page Detail View
+
+## Background Job
+- [x] Create a help library and upload it to the PyPi
+- [ ] Bootstrap Celery
+- [ ] Process the tasks
+
+
+## Chroes
+- [ ] Improve Docs
+- [ ] Add automated tests
+- [ ] Dockerize
