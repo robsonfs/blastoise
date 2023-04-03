@@ -26,3 +26,24 @@ class PageListApiView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class PageDetailApiView(APIView):
+
+    def get_object(self, page_id):
+        try:
+            return Page.objects.get(uuid=page_id)
+        except Page.DoesNotExist:
+            return None
+    
+    def get(self, request, page_id, *args, **kwargs):
+        page_instance = self.get_object(page_id)
+
+        if not page_instance:
+            return Response(
+                {"error": "Page details not found"},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        
+        serializer = PageSerializer(page_instance)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)

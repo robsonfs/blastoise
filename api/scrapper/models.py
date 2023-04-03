@@ -27,7 +27,7 @@ class Page(models.Model):
 
     @property
     def total_links(self):
-        return len(self.links)
+        return len(self.links) if self.links else "in progress"
 
     def __str__(self):
         return self.title or self.url
