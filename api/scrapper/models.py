@@ -24,8 +24,12 @@ class Page(models.Model):
     def name(self):
         return self.title or "page processing"
 
+    @property
+    def total_links(self):
+        return self.links.get_queryset().count() or "in progress"
+
     def __str__(self):
-        return self.name
+        return self.title or self.url
 
 
 class PageLink(models.Model):
