@@ -6,5 +6,5 @@ class PageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Page
-        fields = ["uuid", "name", "total_links"]
+        fields = ["uuid", "name", "total_links", "title", "links", "created_at"]
 
