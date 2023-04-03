@@ -15,7 +15,7 @@ This project is made up of three parts
 
 ## Frontend
 - [x] Bootstrap Vue App
-- [x] Connect to the frontend
+- [x] Wire up the backend to the frontend
 - [ ] List Pages View
 - [ ] Scrape form
 - [ ] Page Detail View
