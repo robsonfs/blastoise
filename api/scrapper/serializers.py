@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from scrapper.models import Page, PageLink
+from scrapper.models import Page
 
 
 class PageSerializer(serializers.ModelSerializer):
